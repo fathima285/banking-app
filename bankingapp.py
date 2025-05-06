@@ -17,4 +17,9 @@ def create_user():
     customers=get_customers_info()
     with open ("users.txt","a") as file:
         file.write(f"{customers[2]},{customers[3]}\n")
+
+def create_auto_user():
+    with open ("users.txt","r") as user_file:
+        user_id=user_file.readlines()[-1].split(",")[0]
+        characters=list(user_id)
         

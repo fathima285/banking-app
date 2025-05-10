@@ -1,0 +1,2 @@
+24403|fathima|200000000.0|2025-05-06 10:08:10 - Account created with balance 200000000.0
+67851|Fathima|30000.0|2025-05-10 11:37:02 - Account created with balance $30000.00

@@ -235,8 +235,6 @@ def main():
 
         choice = input("Select an option: ").strip()
         if choice == "1":
-           attempts=0
-           if attempts<MAX_ATTEMPTS:
 
             username_input = input("Enter admin username: ").strip()
             password_input = getpass.getpass("Enter admin password: ").strip()
@@ -247,22 +245,18 @@ def main():
             else:
                 print("Incorrect admin credentials.")
 
-           elif attempts=+1
-                print("invalid input,attempts remaining")
-
-           elif attempts=MAX_ATTEMPTS
-                print("Too many attemps.Exiting programme")
-                return
                 
             
         elif choice == "2":
+
             acc_no = input("Enter your account number: ").strip()
             pin = getpass.getpass("Enter your 4-digit PIN: ").strip()
             role = verify_credentials(acc_no, pin)
             if role == "user" and acc_no in accounts:
                 customer_menu(acc_no)
             else:
-                print("Invalid account number or PIN.")
+                print("Invalid account number or PIN")
+
         elif choice == "3":
             save_to_file()
             print("Thank you for using the Mini Banking App. Goodbye!")

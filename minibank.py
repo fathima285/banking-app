@@ -171,7 +171,7 @@ def deposit_money(acc_no):
     try:
         amount = float(input("Enter deposit amount: "))
         if amount <= 0:
-            print("Deposit must be a positive number.")
+            print("Deposit amount cannot be negative and Deposit amount must be positive.")
             return
         accounts[acc_no]["balance"] += amount
         msg = f"{get_timestamp()} - Deposited Rs.{amount:.2f}"
@@ -179,7 +179,7 @@ def deposit_money(acc_no):
         log_transaction(acc_no, msg)
         print("Deposit successful.")
     except ValueError:
-        print("Invalid input. Please enter a number.")
+        print("Invalid input.Please enter a number.")
 
 def withdraw_money(acc_no):
     try:

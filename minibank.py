@@ -131,9 +131,9 @@ def view_all_accounts():
     for acc_no, info in accounts.items():
         print(f"Account No: {acc_no} | Name: {info['name']} | Balance: ${info['balance']:.2f}")
 
-def view_all_transactions():
+def Total_transactions(transactions):
     if os.path.exists(TRANSACTION_FILE):
-        print("\n--- All Transactions ---")
+        print("\n--- Total Transactions ---")
         with open(TRANSACTION_FILE, "r") as f:
             for line in f:
                 print(line.strip())
@@ -200,7 +200,7 @@ def withdraw_money(acc_no):
 
 def check_balance(acc_no):
     balance = accounts[acc_no]['balance']
-    print(f"Your current balance is: ${balance:.2f}")
+    print(f"Your current balance is: Rs{balance:.2f}")
 
 def show_transactions(acc_no):
     print("\n--- Your Transaction History ---")
@@ -224,6 +224,9 @@ def verify_credentials(acc_no, pin):
 def main():
     generate_admin_credentials()
     load_from_file()
+
+    MAX_ATTEMPTS=3
+
     while True:
         print("\n=== Welcome to the Mini Banking App ===")
         print("1. Admin Login")
@@ -232,13 +235,26 @@ def main():
 
         choice = input("Select an option: ").strip()
         if choice == "1":
+           attempts=0
+           if attempts<MAX_ATTEMPTS:
+
             username_input = input("Enter admin username: ").strip()
             password_input = getpass.getpass("Enter admin password: ").strip()
             admin_username, admin_password = get_admin_credentials()
+
             if username_input == admin_username and password_input == admin_password:
                 admin_menu()
             else:
                 print("Incorrect admin credentials.")
+
+           elif attempts=+1
+                print("invalid input,attempts remaining")
+
+           elif attempts=MAX_ATTEMPTS
+                print("Too many attemps.Exiting programme")
+                return
+                
+            
         elif choice == "2":
             acc_no = input("Enter your account number: ").strip()
             pin = getpass.getpass("Enter your 4-digit PIN: ").strip()
